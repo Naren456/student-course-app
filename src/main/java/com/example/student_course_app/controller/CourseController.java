@@ -66,4 +66,12 @@ public class CourseController {
         }
         return "redirect:/courses";
     }
+    @GetMapping("/{id}/students")
+    public String showStudentsInCourse(@PathVariable Long id, Model model) {
+        Course course = courseService.getCourseById(id);
+        model.addAttribute("course", course);
+        model.addAttribute("students", studentService.getStudentsByCourse(id));
+        return "course/students";
+    }
 }
+

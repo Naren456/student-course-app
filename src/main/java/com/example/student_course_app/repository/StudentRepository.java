@@ -12,7 +12,9 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    List<Student> findByCoursesId(Long courseId);
+    @Query("SELECT s FROM Student s JOIN s.courses c WHERE c.id = :courseId")
+    List<Student> findByCoursesId(@Param("courseId") Long courseId);
+
 
     Optional<Student> findByEmail(String email);
 

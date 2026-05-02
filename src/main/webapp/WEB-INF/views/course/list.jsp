@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,8 +49,12 @@
                 <td>${course.description}</td>
                 <td>${course.students.size()}</td>
                 <td>
-                    <a href="/courses/edit/${course.id}" class="btn btn-edit">Edit</a>
+                    <div class="actions">
+                        <a href="/courses/edit/${course.id}" class="btn btn-edit">Edit</a>
+                        <a href="/courses/${course.id}/students" class="btn btn-enroll">View Students</a>
+                    </div>
                 </td>
+
             </tr>
         </c:forEach>
         </tbody>
