@@ -1,0 +1,1705 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.example:student-course-app >-------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.5:run (default-cli) > test-compile @ student-course-app >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ student-course-app ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ student-course-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ student-course-app ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ student-course-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.2.5:run (default-cli) < test-compile @ student-course-app <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.5:run (default-cli) @ student-course-app ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-05-02T11:39:10.646+05:30  INFO 24195 --- [           main] c.e.s.StudentCourseAppApplication        : Starting StudentCourseAppApplication using Java 17.0.18 with PID 24195 (/home/narendra/Documents/BITS/student-course-app/target/classes started by narendra in /home/narendra/Documents/BITS/student-course-app)
+2026-05-02T11:39:10.648+05:30  INFO 24195 --- [           main] c.e.s.StudentCourseAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-05-02T11:39:11.191+05:30  INFO 24195 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-02T11:39:11.246+05:30  INFO 24195 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2026-05-02T11:39:11.697+05:30  INFO 24195 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-02T11:39:11.708+05:30  INFO 24195 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-02T11:39:11.709+05:30  INFO 24195 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-02T11:39:11.903+05:30  INFO 24195 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-05-02T11:39:11.909+05:30  INFO 24195 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-02T11:39:11.910+05:30  INFO 24195 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1218 ms
+2026-05-02T11:39:12.035+05:30  INFO 24195 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-02T11:39:12.091+05:30  INFO 24195 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-02T11:39:12.121+05:30  INFO 24195 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-02T11:39:12.314+05:30  INFO 24195 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-02T11:39:12.336+05:30  INFO 24195 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-02T11:39:12.501+05:30  INFO 24195 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6734ff92
+2026-05-02T11:39:12.503+05:30  INFO 24195 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-02T11:39:12.545+05:30  WARN 24195 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-02T11:39:12.546+05:30  WARN 24195 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-02T11:39:13.412+05:30  INFO 24195 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    create table courses (
+        id bigint not null auto_increment,
+        code varchar(10) not null,
+        credits integer,
+        description varchar(255),
+        name varchar(100) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table student_courses (
+        student_id bigint not null,
+        course_id bigint not null,
+        primary key (student_id, course_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table students (
+        id bigint not null auto_increment,
+        age integer,
+        department varchar(255) not null,
+        email varchar(255) not null,
+        name varchar(50) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    alter table courses 
+       drop index UK_61og8rbqdd2y28rx2et5fdnxd
+Hibernate: 
+    alter table courses 
+       add constraint UK_61og8rbqdd2y28rx2et5fdnxd unique (code)
+Hibernate: 
+    alter table courses 
+       drop index UK_5o6x4fpafbywj4v2g0owhh11r
+Hibernate: 
+    alter table courses 
+       add constraint UK_5o6x4fpafbywj4v2g0owhh11r unique (name)
+Hibernate: 
+    alter table students 
+       drop index UK_e2rndfrsx22acpq2ty1caeuyw
+Hibernate: 
+    alter table students 
+       add constraint UK_e2rndfrsx22acpq2ty1caeuyw unique (email)
+Hibernate: 
+    alter table student_courses 
+       add constraint FKsfpq78oyrqua1h0obpl7ulc18 
+       foreign key (course_id) 
+       references courses (id)
+Hibernate: 
+    alter table student_courses 
+       add constraint FKwj1l0mta35u161acdl2tupoo 
+       foreign key (student_id) 
+       references students (id)
+2026-05-02T11:39:13.619+05:30  INFO 24195 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-02T11:39:13.865+05:30  INFO 24195 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-02T11:39:14.207+05:30  WARN 24195 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-02T11:39:14.500+05:30  INFO 24195 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-02T11:39:14.508+05:30  INFO 24195 --- [           main] c.e.s.StudentCourseAppApplication        : Started StudentCourseAppApplication in 4.173 seconds (process running for 4.467)
+Hibernate: 
+    select
+        count(*) 
+    from
+        students s1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        courses c1_0
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        courses
+        (code, credits, description, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        students
+        (age, department, email, name) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.email=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.code=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.code=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.email=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.code=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.code=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.email=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.code=?
+Sample data loaded successfully!
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+2026-05-02T11:39:43.682+05:30  INFO 24195 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-02T11:39:43.683+05:30  INFO 24195 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-02T11:39:43.684+05:30  INFO 24195 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    insert 
+    into
+        student_courses
+        (student_id, course_id) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.age,
+        s1_0.department,
+        s1_0.email,
+        s1_0.name 
+    from
+        students s1_0
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.student_id,
+        c1_1.id,
+        c1_1.code,
+        c1_1.credits,
+        c1_1.description,
+        c1_1.name 
+    from
+        student_courses c1_0 
+    join
+        courses c1_1 
+            on c1_1.id=c1_0.course_id 
+    where
+        c1_0.student_id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.code,
+        c1_0.credits,
+        c1_0.description,
+        c1_0.name 
+    from
+        courses c1_0
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+Hibernate: 
+    select
+        s1_0.course_id,
+        s1_1.id,
+        s1_1.age,
+        s1_1.department,
+        s1_1.email,
+        s1_1.name 
+    from
+        student_courses s1_0 
+    join
+        students s1_1 
+            on s1_1.id=s1_0.student_id 
+    where
+        s1_0.course_id=?
+2026-05-02T11:45:20.270+05:30  INFO 24195 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-02T11:45:20.273+05:30  INFO 24195 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-02T11:45:20.277+05:30  INFO 24195 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
