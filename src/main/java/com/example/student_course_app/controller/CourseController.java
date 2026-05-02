@@ -2,6 +2,8 @@ package com.example.student_course_app.controller;
 
 import com.example.student_course_app.entity.Course;
 import com.example.student_course_app.service.CourseService;
+import com.example.student_course_app.service.StudentService;
+
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,11 +16,14 @@ import org.springframework.web.bind.annotation.*;
 public class CourseController {
 
     private final CourseService courseService;
+    private final StudentService studentService;
 
     @Autowired
-    public CourseController(CourseService courseService) {
+    public CourseController(CourseService courseService, StudentService studentService) {
         this.courseService = courseService;
+        this.studentService = studentService;
     }
+
 
     @GetMapping
     public String listCourses(Model model) {
